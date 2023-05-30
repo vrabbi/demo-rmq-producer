@@ -17,7 +17,7 @@ public class SensorDataSource {
     private final Logger log = LoggerFactory.getLogger(SensorDataSource.class);
 
     @Bean
-    @Scheduled(fixedDelay = 1, timeUnit = TimeUnit.SECONDS)
+    @Scheduled(fixedDelay = 5, timeUnit = TimeUnit.SECONDS)
     public Supplier<SensorData> sendSensorData() {
         return () -> {
             var sensorData = SensorData.generate(SENSOR_ID);
